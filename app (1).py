@@ -21,7 +21,7 @@ def prediction(input_list):
 
 def main():
     st.title('INN HOTEL GROUP')
-    lt = st.text_input('Enter the Lead time in Days')
+    lt = st.number_input('Enter the Lead time in Days')
     mkt = (lambda x: 1 if x=='Online' else 0)(st.selectbox('How the booking was made?', ['Online', 'Offline']))
     price = st.number_input('Enter the price of the Room')
     adult = st.selectbox('How many Adults', [1,2,3,4])
@@ -34,8 +34,8 @@ def main():
                                 5 if x=='Sat' else 6)
     arr_w = weekd_lambda(st.selectbox('Weekday of Arrival', ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']))
     dep_w = weekd_lambda(st.selectbox('Weekday of Departure', ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']))
-    weekn = st.text_input('Enter the no of week nights in stay')
-    wkndn = st.text_input('Enter the no of weekend nights in stay')
+    weekn = st.number_input('Enter the no of week nights in stay')
+    wkndn = st.number_input('Enter the no of weekend nights in stay')
     totan = weekn + wkndn
     park = (lambda x: 1 if x=='yes' else 0 )(st.selectbox('Parking Required ?', ['yes', 'no']))
     spcl = st.selectbox('How many special request have been made ?', [0,1,2,3,4,5])
